@@ -95,6 +95,11 @@ export default function Profile() {
                
                   <input {...formik.getFieldProps('address')} className={`${styles.textbox} ${extend.textbox}`} type="text" placeholder='Address' />
                   <button className={styles.btn} type='submit'>Update</button>
+
+                
+                  <form action="/delete/:id" method="post">
+                    <button type='submit' class="btn-btn-lg">Delete</button>
+              </form>
                
                   
               </div>

@@ -76,6 +76,9 @@ export default function Register() {
 
               <div className="text-center py-4">
                 <span className='text-gray-500'>Already Register? <Link className='text-red-500' to="/">Login Now</Link></span>
+
+              
+
               </div>
 
           </form>

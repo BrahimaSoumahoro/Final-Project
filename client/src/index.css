@@ -1,14 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap'); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * > * {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Nabla', cursive,'Poppins', sans-serif;
 }
 
 body {
     background: #dcdcdce6;
     background-image: url('./assets/Background.png');
 }
+
+h4 {
+    color: #712acb;
+}
+
+.signUp {
+    color: rgb(28, 149, 7);
+}
+
+.text-purple-500 {
+    color: blue;
+    text-decoration-line: underline;
+    background-color: rgb(157, 255, 0);
+}
+
+.text-center-py-4 {}

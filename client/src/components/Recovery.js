@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import { useAuthStore } from  '../store/store'
 import styles from '../styles/Username.module.css';
-import { generateOTP, verifyOTP } from '../helper/helper';
+import { generateOneTimeCode, verifyOTP } from '../helper/helper';
 import { useNavigate } from 'react-router-dom'
 
 export default function Recovery() {
@@ -12,7 +12,7 @@ export default function Recovery() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    generateOTP(username).then((OTP) => {
+    generateOneTimeCode(username).then((OTP) => {
       console.log(OTP)
       if(OTP) return toast.success('OTP has been send to your email!');
       return toast.error('Problem while generating OTP!')
@@ -28,14 +28,14 @@ export default function Recovery() {
         return navigate('/reset')
       }  
     } catch (error) {
-      return toast.error('Wront OTP! Check email again!')
+      return toast.error('Wrong One Time Code! Check email again!')
     }
   }
 
   // handler of resend OTP
   function resendOTP(){
 
-    let sentPromise = generateOTP(username);
+    let sentPromise = generateOneTimeCode(username);
 
     toast.promise(sentPromise ,
       {

@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function PageNotFound() {
   return (
-    <div>PageNotFound</div>
+    <div>Sorry... we're still under construction of the page.</div>
   )
 }

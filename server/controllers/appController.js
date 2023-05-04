@@ -206,7 +206,7 @@ export async function updateUser(req,res){
 
 
 /** GET: http://localhost:4000/api/generateOTP */
-export async function generateOTP(req,res){
+export async function generateOneTimeCode(req,res){
     req.app.locals.OTP = await otpGenerator.generate(6, { lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false})
     res.status(201).send({ code: req.app.locals.OTP })
 }
@@ -232,6 +232,9 @@ export async function createResetSession(req,res){
    }
    return res.status(440).send({error : "Session expired!"})
 }
+
+
+
 
 
 // update the password when we have valid session
@@ -274,3 +277,24 @@ export async function resetPassword(req,res){
         return res.status(401).send({ error })
     }
 }
+
+// Deleting User data
+// exports.delete = (req,res) => {
+//     const id =req.params.id;
+
+//     userdb.findByAndDelete(id)
+//         .then(data => {
+//             if(!data){
+//                 res.status(404).send({message: 'Cannot delete with id ${id}.Maybe id is wrong'})
+//             }else {
+//                 res.send({
+//                     message: "user successfully deleted"
+//                 })
+//             }
+//         })
+//         .catch(err => {
+//             res.status(500).send({
+//                 message: "Could not delete user with id=" + id
+//             });
+//         });
+// }

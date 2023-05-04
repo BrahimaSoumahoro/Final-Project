@@ -35,9 +35,9 @@ export default function Username() {
         <div className={styles.glass}>
 
           <div className="title flex flex-col items-center">
-            <h4 className='text-5xl font-bold'>Hello Again!</h4>
-            <span className='py-4 text-xl w-2/3 text-center text-gray-500'>
-              Explore More by connecting with us.
+            <h4 className='text-5xl font-bold'>Welcome to Ivory Health & Bodybuilding.</h4>
+            <span className='py-4 text-xl w-2/3 text-center text-blue-500'>
+              Please enter your username below.
             </span>
           </div>
 
@@ -48,13 +48,11 @@ export default function Username() {
 
               <div className="textbox flex flex-col items-center gap-6">
                   <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Username' />
-                  <button className={styles.btn} type='submit'>Let's Go</button>
+                  <button className={styles.btn} type='submit'>Sign In</button>
               </div>
-
               <div className="text-center py-4">
-                <span className='text-gray-500'>Not a Member <Link className='text-red-500' to="/register">Register Now</Link></span>
+                <span className='text-purple-500 py-2.5 px-10'>New Here?      <Link className='signUp px-10' to="/register">Sign Up</Link></span>
               </div>
-
           </form>
 
         </div>

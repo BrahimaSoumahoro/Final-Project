@@ -22,7 +22,11 @@ app.get('/', (req, res) => {
 
 
 /** api routes */
-app.use('/api', router)
+app.use('/api', router);
+app.post('/delete/:id', async (req, res) => {
+  await Post.deleteOne({_id: req.params.id})
+  return res.redirect('/')
+});
 
 /** start server only when we have valid connection */
 connect().then(() => {
